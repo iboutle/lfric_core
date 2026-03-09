@@ -17,7 +17,7 @@ contains
   @test
   subroutine test_of_copy_field_halo()
 
-    use sci_copy_field_halo_kernel_mod, only : copy_field_halo_code
+    use copy_field_halo_kernel_mod, only : copy_field_halo_code
 
     implicit none
 
