@@ -28,7 +28,7 @@ contains
     field_in(:) = [ -10.0_r_def, 0.0_r_def, 10.0_r_def ]
     map(:) = [1]
 
-    call copy_field_halo_code(3, field_out, field_in, 1, 1, map)
+    call copy_field_halo_code(3, field_out, field_in, 1, 3, map)
     @assertEqual( field_out, field_in, tol )
 
   end subroutine test_of_copy_field_halo
