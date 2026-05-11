@@ -16,6 +16,7 @@ module lfric_xios_read_mod
                                       LARGE_DP_NEGATIVE
   use lfric_xios_constants_mod, only: dp_xios
   use io_value_mod,             only: io_value_type
+  use io_config_mod,            only: checkpoint_read
   use field_mod,                only: field_type, field_proxy_type
   use field_real32_mod,         only: field_real32_type, field_real32_proxy_type
   use field_real64_mod,         only: field_real64_type, field_real64_proxy_type
@@ -492,6 +493,7 @@ subroutine read_checkpoint(state, timestep, checkpoint_stem_name, prefix, suffix
     fld => iter%next()
     ! Construct the XIOS field ID from the LFRic field name and optional arguments
     xios_field_id = trim(adjustl(fld%get_name()))
+    if (xios_field_id == 'ozone' .and. .not. checkpoint_read) cycle
     if ( present(prefix) ) xios_field_id = trim(adjustl(prefix)) // trim(adjustl(xios_field_id))
     if ( present(suffix) ) xios_field_id = trim(adjustl(xios_field_id)) // trim(adjustl(suffix))
     select type(fld)
