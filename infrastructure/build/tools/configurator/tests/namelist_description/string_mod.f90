@@ -28,7 +28,7 @@ module mirth_config_mod
             mirth_multiples_allowed, mirth_final, &
             get_mirth_nml, get_new_mirth_nml
 
-  integer(i_def), parameter, public :: max_array_size = 500
+  integer(i_def), parameter, public :: max_array_size = 7000
 
   character(str_def), public, protected, allocatable :: chortle(:)
   character(str_def), public, protected :: chuckle = cmdi
