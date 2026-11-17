@@ -29,7 +29,7 @@ module aerial_config_mod
             aerial_multiples_allowed, aerial_final, &
             get_aerial_nml, get_new_aerial_nml
 
-  integer(i_def), parameter, public :: max_array_size = 7000
+  integer(i_def), parameter, public :: max_array_size = 12000
 
   character(str_def), public, protected :: absolute(5) = cmdi
   integer(i_def), public, protected, allocatable :: inlist(:)

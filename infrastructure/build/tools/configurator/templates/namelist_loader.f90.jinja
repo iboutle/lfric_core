@@ -46,7 +46,7 @@ module {{listname}}_config_mod
 {%- endfor %}
 
 {%- if arrays %}{{ '\n' }}
-  integer(i_def), parameter, public :: max_array_size = 7000
+  integer(i_def), parameter, public :: max_array_size = 12000
 {%- endif %}
 
 {%- for name, parameter in parameters | dictsort %}
